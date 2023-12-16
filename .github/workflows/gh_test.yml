@@ -32,3 +32,21 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+
+      - name: Delete branch
+        if: github.event.pull_request.merged == true
+        run: |
+          git push origin --delete ${{ github.event.pull_request.head.ref }}
+
+      - name: Close linked issue
+        if: github.event.pull_request.merged == true && github.event.pull_request.references_issue
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            github.issues.update({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              state: 'closed'
+            });
