@@ -6,6 +6,9 @@
     <groupId>com.torerax.kampos</groupId>
     <artifactId>web-torerax</artifactId>
     <version>1.0.0</version>
-
+    <properties>
+        <sonar.organization>pedrotorerax</sonar.organization>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+    </properties>
 
 </project>

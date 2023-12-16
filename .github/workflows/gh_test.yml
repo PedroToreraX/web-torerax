@@ -15,6 +15,7 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   build:
+    name: Build and analyze
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -33,13 +34,25 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
 
-      - name: Delete branch and close linked issue
-        if: github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged
-        run: |
-          git push origin --delete ${{ github.event.pull_request.head.ref }}
-          echo "Successfully deleted branch."
-
-          if [[ -n "${{ github.event.pull_request.references_issue }}" ]]; then
-            echo "Closing linked issue."
-            gh issue close ${{ github.event.pull_request.references_issue }}
-          fi
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: 17
+          distribution: 'zulu' # Alternative distribution options are available.
+      - name: Cache SonarCloud packages
+        uses: actions/cache@v3
+        with:
+          path: ~/.sonar/cache
+          key: ${{ runner.os }}-sonar
+          restore-keys: ${{ runner.os }}-sonar
+      - name: Cache Maven packages
+        uses: actions/cache@v3
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+          restore-keys: ${{ runner.os }}-m2
+      - name: Build and analyze
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=PedroToreraX_web-torerax
