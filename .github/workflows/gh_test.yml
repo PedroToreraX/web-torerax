@@ -36,7 +36,6 @@ jobs:
       - name: Build and analyze with SonarQube
         run: |
           mvn clean verify sonar:sonar \
-            -Dsonar.host.url=https://sonarcloud.io \
             -Dsonar.login=${{ secrets.SONAR_TOKEN }}
 
         env:
