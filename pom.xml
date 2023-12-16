@@ -6,6 +6,13 @@
     <groupId>com.torerax.kampos</groupId>
     <artifactId>web-torerax</artifactId>
     <version>1.0.0</version>
-
-
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.sonarsource.scanner.maven</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+                <version>3.10.0.2594</version>
+            </plugin>
+        </plugins>
+    </build>
 </project>
