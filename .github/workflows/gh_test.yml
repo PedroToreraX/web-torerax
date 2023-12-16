@@ -33,14 +33,15 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
 
+      # Add the SonarCloud action configuration here
       - name: SonarCloud
         on:
           push:
             branches:
               - main
           pull_request:
-            types: [ opened, synchronize, reopened ]
-      - jobs:
+            types: [opened, synchronize, reopened]
+        jobs:
           build:
             name: Build and analyze
             runs-on: ubuntu-latest
@@ -70,4 +71,3 @@ jobs:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
                   SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
                 run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=PedroToreraX_web-torerax
-
