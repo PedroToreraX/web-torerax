@@ -32,3 +32,14 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+
+      - name: Delete branch and close linked issue
+        if: github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged
+        run: |
+          git push origin --delete ${{ github.event.pull_request.head.ref }}
+          echo "Successfully deleted branch."
+
+          if [[ -n "${{ github.event.pull_request.references_issue }}" ]]; then
+            echo "Closing linked issue."
+            gh issue close ${{ github.event.pull_request.references_issue }}
+          fi
