@@ -10,6 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="code" target="1.5" />
       <module name="model" target="17" />
       <module name="web-torerax (1)" target="1.5" />
       <module name="web-torerax (2)" target="1.5" />
@@ -19,6 +20,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="boot" options="-parameters" />
+      <module name="code" options="" />
       <module name="model" options="-parameters" />
       <module name="web-torerax" options="" />
     </option>
