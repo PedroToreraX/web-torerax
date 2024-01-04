@@ -22,8 +22,6 @@
         <java.version>17</java.version>
         <sonar.organization>pedrotorerax</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
-        <jacoco.outputDirectory>${project.build.directory}/jacoco</jacoco.outputDirectory>
-        <sonar.coverage.jacoco.xmlReportPaths>${jacoco.outputDirectory}/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
     </properties>
 
     <build>
