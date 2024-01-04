@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.torerax.kampos.boot.DemoApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.881 s -- in com.torerax.kampos.boot.DemoApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.941 s -- in com.torerax.kampos.boot.DemoApplicationTests
