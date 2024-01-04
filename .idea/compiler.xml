@@ -19,6 +19,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="boot" options="-parameters" />
+      <module name="code" options="" />
       <module name="model" options="-parameters" />
       <module name="web-torerax" options="" />
     </option>
