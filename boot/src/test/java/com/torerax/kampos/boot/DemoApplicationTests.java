@@ -1,4 +1,4 @@
-package boot;
+package com.torerax.kampos.boot;
 
 import com.torerax.kampos.boot.DemoApplication;
 import org.junit.jupiter.api.Test;
