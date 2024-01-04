@@ -1,14 +1,15 @@
 package com.torerax.kampos.boot;
 
-import com.torerax.kampos.boot.DemoApplication;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest(classes = DemoApplication.class)
+@SpringBootTest
 public class DemoApplicationTests {
 
 	@Test
 	public void contextLoads() {
-		// Esta prueba verifica que el contexto de la aplicación se cargue sin errores
+		// Este método simplemente carga el contexto de la aplicación,
+		// asegurando que la aplicación se inicie correctamente.
 	}
 }
+
