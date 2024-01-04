@@ -10,6 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="code" target="1.5" />
       <module name="model" target="17" />
       <module name="web-torerax (1)" target="1.5" />
       <module name="web-torerax (2)" target="1.5" />
