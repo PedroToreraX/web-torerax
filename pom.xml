@@ -16,7 +16,6 @@
 
     <modules>
         <module>boot</module>
-        <module>frontend</module>
         <module>domain</module>
         <module>infrastructure</module>
         <module>application</module>

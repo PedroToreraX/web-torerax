@@ -1,2 +1,3 @@
+goldpass\controller\RestTemplateConfiguration.class
 goldpass\dtos\GoldPassDTO.class
 goldpass\controller\GoldPassController.class

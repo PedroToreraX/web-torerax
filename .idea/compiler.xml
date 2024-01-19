@@ -9,13 +9,13 @@
         <outputRelativeToContentRoot value="true" />
         <module name="boot" />
         <module name="application" />
-        <module name="frontend" />
         <module name="infrastructure" />
         <module name="domain" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="code" target="1.5" />
+      <module name="frontend" target="11" />
       <module name="model" target="17" />
       <module name="web-torerax (1)" target="1.5" />
       <module name="web-torerax (2)" target="1.5" />
